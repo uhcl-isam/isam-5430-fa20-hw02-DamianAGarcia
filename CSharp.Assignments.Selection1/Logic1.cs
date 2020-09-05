@@ -19,7 +19,7 @@ namespace CSharp.Assignments.Loop1
         {
             if (isWeekend && cigars >= 40)
             {
-               return true;
+                return true;
             }
             else if (cigars >= 40 && cigars <= 60)
             {
@@ -30,7 +30,11 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// You are driving a little too fast, and a police officer stops you.Write code to compute the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, your speed can be 5 higher in all cases.
+        /// You are driving a little too fast, and a police officer stops you.
+        /// Write code to compute the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. 
+        /// If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result is 1. 
+        /// If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, 
+        /// your speed can be 5 higher in all cases.
         /// </summary>
         /// <param name="speed"></param>
         /// <param name="birthday"></param>
@@ -41,14 +45,19 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// The number 6 is a truly great number.Given two int values, a and b, return true if either one is 6. Or if their sum or difference is 6.
+        /// The number 6 is a truly great number.Given two int values, a and b, return true if either one is 6. 
+        /// Or if their sum or difference is 6.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
         public static bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            if (6 == a || b == 6 || a + b == 6 || a - b == 6 || b - a == 6)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -68,7 +77,12 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool NearTen(int num)
         {
-            throw new NotImplementedException();
+            if ( num % 10 <=2 || num % 10 >= 8)
+            {
+                return true;
+            }
+            return false;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -83,7 +97,10 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// The squirrels in Palo Alto spend most of the day playing.In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. Given an int temperature and a boolean isSummer, return true if the squirrels play and false otherwise.
+        /// The squirrels in Palo Alto spend most of the day playing.In particular, 
+        /// they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, 
+        /// then the upper limit is 100 instead of 90. Given an int temperature and a boolean isSummer, 
+        /// return true if the squirrels play and false otherwise.
         /// </summary>
         /// <param name="temperature"></param>
         /// <param name="isSummer"></param>
