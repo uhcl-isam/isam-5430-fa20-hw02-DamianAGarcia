@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 
 namespace CSharp.Assignments.Loop1
@@ -41,7 +42,21 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static int CaughtSpeeding(int speed, bool birthday)
         {
-            throw new NotImplementedException();
+            if (speed <= 60 || birthday && speed <= 60+5)
+            {
+                return 0;
+            }
+            else if (speed >= 61 && speed <= 80 || birthday && speed >= 61+5 && speed <= 80+5)
+            {
+                return 1;
+            }
+            else if (birthday && speed >= 81+5)
+            {
+                return 2;
+            }
+            return 2;
+            //throw new NotImplementedException();
+
         }
 
         /// <summary>
@@ -67,7 +82,12 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool More20(int num)
         {
-            throw new NotImplementedException();
+            if ((num % 20)-1 == 0 || (num % 20)-2 == 0)
+            {
+                return true;
+            }
+            return false;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -86,14 +106,27 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// We are having a party with amounts of tea and candy. Return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).
+        /// We are having a party with amounts of tea and candy. 
+        /// Return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) 
+        /// if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of 
+        /// the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, 
+        /// the party is always bad (0).
         /// </summary>
         /// <param name="tea"></param>
         /// <param name="candy"></param>
         /// <returns></returns>
         public static int TeaParty(int tea, int candy)
         {
-            throw new NotImplementedException();
+            if (tea >5 && candy >5)
+            {
+                return 1;
+            }
+            else if (tea/candy >= 2 || candy/tea >= 2 )
+            {
+                return 2;
+            }
+            return 0;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -107,8 +140,9 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool SquirrelPlay(int temperature, bool isSummer)
         {
-            throw new NotImplementedException();
-        }
+            return (temperature >= 60 && temperature <= 90) || (isSummer && temperature >= 60 && temperature <= 100);
+            //throw new NotImplementedException();
+        } 
 
         /// <summary>
         /// Given a day of the week encoded as DayOfWeek enum (i.e. named integers): 
@@ -124,12 +158,23 @@ namespace CSharp.Assignments.Loop1
         /// <returns>either: "7:00" or "10:00" or "off"</returns>
         public static string AlarmClock(DayOfWeek dayOfWeek, bool vacation)
         {
-            throw new NotImplementedException();
+            if (vacation || dayOfWeek.Equals(1-5))
+            {
+                return "10:00";
+            }
+            else if (vacation && dayOfWeek.Equals(0-6))
+            {
+                return "off";
+            }
+            return "7:00";
+            //throw new NotImplementedException();
         }
 
 
         /// <summary>
-        /// Your cell phone rings.Return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling.In all cases, if you are asleep, you do not answer.
+        /// Your cell phone rings.Return true if you should answer it. 
+        /// Normally you answer, except in the morning you only answer if it is your mom calling.
+        /// In all cases, if you are asleep, you do not answer.
         /// </summary>
         /// <param name="isMorning"></param>
         /// <param name="isMom"></param>
@@ -137,7 +182,20 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            throw new NotImplementedException();
+            if (isAsleep)
+            {
+                return false;
+            }
+            else if (isMorning && isMom)
+            {
+                return true;
+            }
+            else if (isMorning)
+            {
+                return false;
+            }
+            return true;
+            //throw new NotImplementedException();
         }
 
 
@@ -155,7 +213,9 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: Math.abs(num) computes the absolute value of a number.
+        /// Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most 1), 
+        /// while the other is "far", differing from both other values by 2 or more. Note: 
+        /// Math.abs(num) computes the absolute value of a number.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -163,7 +223,13 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool CloseFar(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (Math.Abs(a - c) <= 1 && Math.Abs(a - b) >= 2 && Math.Abs(c-b) >= 2 
+                || Math.Abs(b - a) <= 1 && Math.Abs(c - b) >= 2 && Math.Abs(c - a) >= 2)
+            {
+                return true;
+            }
+            return false;
+            //throw new NotImplementedException();
         }
     }
 }
