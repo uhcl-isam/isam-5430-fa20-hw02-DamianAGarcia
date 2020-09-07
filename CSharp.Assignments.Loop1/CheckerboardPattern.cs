@@ -29,7 +29,13 @@ namespace CSharp.Assignments.Loop1
             int num = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter the fill character: ");
             char fillChar = Char.Parse(Console.ReadLine());
+            
+            while (num > 0)
+            {
+                Console.WriteLine("\n" + fillChar);
 
+                num--;
+            }
             // Write your codes here.
         }
     }
