@@ -22,8 +22,27 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            // prompt user for non-negative miles and obtain the input from user
-            // codes go here.
+            {
+                float miles = 0;
+                float gallons = 0;
+                while (miles >= 0 && gallons >= 0)
+                {
+                    // prompt user for non-negative miles and obtain the input from user
+                    Console.WriteLine("Please enter number of mile: ");
+                    miles = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Please enter number of gallons: ");
+                    gallons = Convert.ToInt32(Console.ReadLine());
+                    if (miles >= 0 && gallons >= 0)
+                    {
+                        float mpg = miles / gallons;
+                        Console.WriteLine("Your miles per gallons is " + mpg.ToString("0.00") + ".");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You entered in an invalid number.");
+                    }
+                }
+            }
         }
     }
 }

@@ -14,6 +14,15 @@ namespace CSharp.Assignments.Loop1
         {
             Console.WriteLine("Enter the last number of Fibonacci Sequence of numbers.");
             int end = int.Parse(Console.ReadLine());
+            int i = 0;
+            int j = 0;
+            while (i < end)
+            {
+                int fibNum = i + j;
+                Console.WriteLine(fibNum);
+                i++;
+                j = j + i;
+            }
 
                      
 

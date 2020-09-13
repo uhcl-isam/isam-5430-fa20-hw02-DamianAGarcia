@@ -16,9 +16,6 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Write your codes here
-            int n = Convert.ToInt32(Console.ReadLine());
-
-
         }
     }
 }
