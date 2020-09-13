@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.Design.Serialization;
+
 namespace CSharp.Assignments.Loop1
 {
     /// <summary>
@@ -23,7 +25,15 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // get first number and assign it to variable largest
+            int i = 0;
+            while(i < 10)
+            {
+                i--;
+
+            }
+
             // write your codes here
+            
         }
     }
 }

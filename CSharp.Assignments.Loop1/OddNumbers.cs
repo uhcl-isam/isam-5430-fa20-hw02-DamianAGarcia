@@ -20,13 +20,19 @@ namespace CSharp.Assignments.Loop1
             Console.Error.WriteLine("Enter the ending number");
             // Codes to enter end.
             int end = Convert.ToInt32(Console.ReadLine());
-            for ( int n = start ; n < end  ; n++)
+            if (start > end)
             {
-                if (n % 2 != 0)
-                {
-                    Console.WriteLine(n.ToString());
-                }
+                Console.WriteLine("Invalid, no numbers to order.");
             }
+            else
+                while(start < end)
+                {
+                    if (start % 2 != 0)
+                    {
+                        Console.WriteLine(start);
+                    }
+                start++;
+                }
         }
     }
 }
